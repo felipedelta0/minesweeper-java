@@ -7,13 +7,12 @@ public class Board {
 
     private int rows;
     private int columns;
+    private int mines;
+    private Cell[][] cells;
 
-    public Board(int rows, int columns) {
+    public Board(int rows, int columns, int mines) {
         this.rows = rows;
         this.columns = columns;
-    }
-
-    private void initialSetup() {
-
+        this.mines = mines;
     }
 }
