@@ -1,31 +1,30 @@
 package boardgame;
 
 /**
- * @author luisf on 09/04/2021
+ * @author luisf on 14/04/2021
  */
 public class Cell {
 
+    protected Position position;
+    private Board board;
     private boolean isVisible;
-    private boolean isBomb;
 
-    public Cell(boolean isBomb) {
+    public Cell(Board board, Position position) {
+        this.board = board;
+        this.position = position;
         this.isVisible = false;
-        this.isBomb = isBomb;
     }
 
     public boolean isVisible() {
         return isVisible;
     }
 
-    public void setBomb(boolean bomb) {
-        isBomb = bomb;
-    }
-
-    public boolean isBomb() {
-        return isBomb;
-    }
-
-    public void revealCell() {
+    public void reveal() {
         this.isVisible = true;
+    }
+
+    @Override
+    public String toString() {
+        return isVisible ? "-" : "0";
     }
 }
